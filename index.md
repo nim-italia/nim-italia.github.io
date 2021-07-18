@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "PAGE TITLE"
-permalink: /URL-PATH/
+title: "index"
+permalink: /
 ---
 
 # Placeholder per il sito nim-italia
