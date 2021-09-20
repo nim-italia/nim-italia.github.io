@@ -12,3 +12,5 @@ when isMainModule:
 
 - [programmare in Nim su Raspberry Pico]({% link martinix75/raspberryrp2040.md %}) di [Andrea Martin](https://sites.google.com/view/martinix/home)
 
+### Community: ###
+- [Canale Telegram nimitalia](https://t.me/nimitalia)
