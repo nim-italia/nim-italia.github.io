@@ -86,7 +86,7 @@ when isMainModule:
 
 {% endhighlight %}
 
-Ho anche fatto un piccolo scanner I2C per trovare gli indirizzi dei vari dispositivi che son sempre un incubo (anche questo lo metterò su gitHub appena decido come strutturare la cosa). qui puoi trovare le librerie/utility:
+Ho anche fatto un piccolo scanner I2C per trovare gli indirizzi dei vari dispositivi che son sempre un incubo. qui puoi trovare le librerie/utility:
 
 <https://github.com/Martinix75/Raspberry_Pico.git>
 
