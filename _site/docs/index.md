@@ -1,3 +1,4 @@
+
 ---
 ---
 
@@ -10,5 +11,4 @@ when isMainModule:
 
 ## ULTIMI AGGIORNAMENTI ##
 
-- [programmare in Nim su Raspberry Pico]({% link martinix75/raspberryrp2040.md %}) di [Andrea Martin](https://sites.google.com/view/martinix/home)
-
+[20 settembre 2021: programmare in Nim su Raspberry Pico]({% link martinix75/raspberryrp2040.md %}) di Andrea Martin

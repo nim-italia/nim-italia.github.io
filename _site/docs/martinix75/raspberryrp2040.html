@@ -1,0 +1,88 @@
+<h1 id="raspberry-pico-rp2040">Raspberry Pico RP2040</h1>
+<p>il Raspberry Pico è una minucscola scheda che monda un piccolo, ma potente microprocessore dalle seguenti caratteristiche:</p>
+<ul>
+  <li>Processore Dual-Core Arm Cortex M0+.</li>
+  <li>Clock da 133Mhz.</li>
+  <li>264Kb Sram e 2MB di falsch Memory on board.</li>
+  <li>Usb 1.1</li>
+  <li>26 pin I/O (multifunzione).</li>
+  <li>Canali PWM, IC2, Dac-12bit.</li>
+  <li>e molto altro…</li>
+</ul>
+
+<p>La programmazione “naturale” di questo dispositivo è ovviamente in C, ma ne parliamo qui perchè si stà sviluppando un wrapper per poterlo utilizzare anche con Nim. Ovviamente ce ancora molto lavoro da fare, ma con l’ultima versione della libreria “picostdlib” si son fatti molti passi avanti, sopratutto sulla semplicità di avviare, compilare il nostro progetto, e non solo, abbiamo aggiunto funzionalità che potrebbero essere interessanti, qui puoi trovare la libreria:</p>
+
+<p>picostdlib link: <a href="https://github.com/beef331/picostdlib">https://github.com/beef331/picostdlib</a></p>
+
+<p>Oltre al controllo dei pin (input, outup, pullup, pulldown) in modalità classica,ultimamnete si son aggiunti due importanti funzioni per un microntrollore:</p>
+<ul>
+  <li>La comunicazione in ingresso tramite usb, per mandare comandi al microcontrollore.</li>
+  <li>l’attivazione del bas i2c importante per dialogare con un infinità di hardware (bussole, accelerometri display ecc).</li>
+  <li>modalità “sugar” per inizializzare i pin I/O del micro.</li>
+</ul>
+
+<p>Al momento ho anche sviluppato una semplice libreria per far leggere al micro, non solo i caratteri singoli inviati via usb, ma di prendere l’intera stringa inviata, cosa molto utile per i protocolli di comunicazione verso lo stesso micro, in più sto scrivendo la libreria per un PCF8574 ovvero un I/O expander, ma sono ancora in sviluppo. Diseguito un breve esempio:</p>
+
+<figure class="highlight"><pre><code class="language-nim" data-lang="nim"><span class="k">import</span> <span class="n">picostdlib</span><span class="o">/[</span><span class="n">gpio</span><span class="p">,</span> <span class="n">i2c</span><span class="o">]</span>
+<span class="k">import</span> <span class="n">picostdlib</span>
+
+<span class="k">const</span> 
+  <span class="n">on</span> <span class="o">=</span> <span class="kp">true</span>
+  <span class="n">off</span> <span class="o">=</span> <span class="kp">false</span>
+  <span class="n">p0</span><span class="p">:</span> <span class="n">uint8</span> <span class="o">=</span> <span class="m">0b00000001</span>
+  <span class="n">p1</span><span class="p">:</span> <span class="n">uint8</span> <span class="o">=</span> <span class="m">0b00000010</span>
+  <span class="n">p2</span><span class="p">:</span> <span class="n">uint8</span> <span class="o">=</span> <span class="m">0b00000100</span>
+  <span class="n">p3</span><span class="p">:</span> <span class="n">uint8</span> <span class="o">=</span> <span class="m">0b00001000</span>
+  <span class="n">p4</span><span class="p">:</span> <span class="n">uint8</span> <span class="o">=</span> <span class="m">0b00010000</span>
+  <span class="n">p5</span><span class="p">:</span> <span class="n">uint8</span> <span class="o">=</span> <span class="m">0b00100000</span>
+  <span class="n">p6</span><span class="p">:</span> <span class="n">uint8</span> <span class="o">=</span> <span class="m">0b01000000</span>
+  <span class="n">p7</span><span class="p">:</span> <span class="n">uint8</span> <span class="o">=</span> <span class="m">0b10000000</span>
+
+<span class="k">type</span> 
+  <span class="n">Pcf8574</span> <span class="o">=</span> <span class="k">ref</span> <span class="k">object</span> 
+    <span class="n">addressDevice</span><span class="p">:</span> <span class="n">uint8</span>
+    <span class="n">blockk</span><span class="p">:</span> <span class="n">I2cInst</span>
+    <span class="n">buffer</span><span class="p">:</span> <span class="n">uint8</span>
+
+<span class="k">proc </span><span class="nf">writeBytex</span><span class="p">(</span><span class="n">self</span><span class="p">:</span> <span class="n">Pcf8574</span><span class="p">,</span> <span class="n">dato</span><span class="p">:</span><span class="n">uint8</span> <span class="p">)</span> <span class="o">=</span>
+  <span class="k">let</span> <span class="n">dato</span> <span class="o">=</span> <span class="n">dato</span><span class="p">.</span><span class="n">unsafeAddr</span>
+  <span class="n">writeBlocking</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">blockk</span><span class="p">,</span> <span class="n">self</span><span class="p">.</span><span class="n">addressDevice</span><span class="p">,</span> <span class="n">dato</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
+
+<span class="k">proc </span><span class="nf">digitaWrite</span><span class="p">(</span><span class="n">self</span><span class="p">:</span><span class="n">Pcf8574</span><span class="p">,</span><span class="n">pin</span><span class="p">:</span><span class="n">uint8</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span><span class="kt">bool</span><span class="p">)</span> <span class="o">=</span>
+  <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">on</span><span class="p">:</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">buffer</span> <span class="ow">or</span> <span class="n">pin</span><span class="p">)</span>
+    <span class="n">writeBytex</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">self</span><span class="p">.</span><span class="n">buffer</span><span class="p">)</span>
+  <span class="k">elif</span> <span class="n">value</span> <span class="o">==</span> <span class="n">off</span><span class="p">:</span>
+    <span class="n">self</span><span class="p">.</span><span class="n">buffer</span> <span class="o">=</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">buffer</span> <span class="ow">and</span> <span class="n">pin</span><span class="p">)</span>
+    <span class="n">writeBytex</span><span class="p">(</span><span class="n">self</span><span class="p">,</span><span class="n">self</span><span class="p">.</span><span class="n">buffer</span><span class="p">)</span>
+
+
+<span class="k">when</span> <span class="n">isMainModule</span><span class="p">:</span>
+  <span class="n">stdioInitAll</span><span class="p">()</span>
+  <span class="k">let</span> <span class="n">expander</span> <span class="o">=</span> <span class="n">Pcf8574</span><span class="p">(</span><span class="n">addressDevice</span><span class="p">:</span> <span class="mh">0x20</span><span class="p">,</span> <span class="n">blockk</span><span class="p">:</span> <span class="n">i2c0</span><span class="p">,</span> <span class="n">buffer</span><span class="p">:</span> <span class="m">0b00000000</span><span class="p">)</span>
+
+  <span class="k">const</span> <span class="n">sda</span> <span class="o">=</span> <span class="mf">0.</span><span class="n">Gpio</span> 
+  <span class="k">const</span> <span class="n">scl</span> <span class="o">=</span> <span class="mf">1.</span><span class="n">Gpio</span> 
+  <span class="k">const</span> <span class="n">address</span> <span class="o">=</span> <span class="mh">0x20</span>
+  <span class="k">var</span> <span class="n">buffer</span><span class="p">:</span><span class="n">uint8</span> <span class="o">=</span> <span class="m">0b00000000</span>
+
+  <span class="n">init</span><span class="p">(</span><span class="n">i2c0</span><span class="p">,</span><span class="mi">10000</span><span class="p">)</span>
+  <span class="n">sda</span><span class="p">.</span><span class="n">setFunction</span><span class="p">(</span><span class="n">I2C</span><span class="p">);</span> <span class="n">sda</span><span class="p">.</span><span class="n">pullUp</span><span class="p">()</span>
+  <span class="n">scl</span><span class="p">.</span><span class="n">setFunction</span><span class="p">(</span><span class="n">I2C</span><span class="p">);</span> <span class="n">scl</span><span class="p">.</span><span class="n">pullUp</span><span class="p">()</span>
+
+
+  <span class="k">let</span> <span class="n">dato</span> <span class="o">=</span> <span class="n">buffer</span><span class="p">.</span><span class="n">unsafeAddr</span>
+  <span class="n">i2c0</span><span class="p">.</span><span class="n">writeBlocking</span><span class="p">(</span><span class="n">address</span><span class="p">,</span> <span class="n">dato</span><span class="p">,</span>  <span class="mi">1</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
+  <span class="n">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
+
+  <span class="k">while</span> <span class="kp">true</span><span class="p">:</span>
+    <span class="n">digitaWrite</span><span class="p">(</span><span class="n">expander</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">on</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+    <span class="n">digitaWrite</span><span class="p">(</span><span class="n">expander</span><span class="p">,</span><span class="n">p4</span><span class="p">,</span><span class="n">on</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+    <span class="n">digitaWrite</span><span class="p">(</span><span class="n">expander</span><span class="p">,</span><span class="n">p1</span><span class="p">,</span><span class="n">off</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span>
+    <span class="n">digitaWrite</span><span class="p">(</span><span class="n">expander</span><span class="p">,</span><span class="n">p4</span><span class="p">,</span><span class="n">off</span><span class="p">)</span>
+    <span class="n">sleep</span><span class="p">(</span><span class="mi">1500</span><span class="p">)</span></code></pre></figure>
+
+<p>Ho anche fatto un piccolo scanner I2C per trovare gli indirizzi dei vari dispositivi che son sempre un incubo (anche questo lo metterò su gitHub appena decido come strutturare la cosa).</p>
