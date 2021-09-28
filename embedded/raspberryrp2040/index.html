@@ -1,0 +1,232 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=generator content="Hugo 0.88.1">
+<meta name=description content>
+<meta name=author content="Nim Italia">
+<link rel=icon href=/images/favicon.png type=image/png>
+<title>Raspberry Pico RP2040 :: Nim Italia</title>
+<link href=/css/nucleus.css?1632861308 rel=stylesheet>
+<link href=/css/fontawesome-all.min.css?1632861308 rel=stylesheet>
+<link href=/css/hybrid.css?1632861308 rel=stylesheet>
+<link href=/css/featherlight.min.css?1632861308 rel=stylesheet>
+<link href=/css/perfect-scrollbar.min.css?1632861308 rel=stylesheet>
+<link href=/css/auto-complete.css?1632861308 rel=stylesheet>
+<link href=/css/atom-one-dark-reasonable.css?1632861308 rel=stylesheet>
+<link href=/css/theme.css?1632861308 rel=stylesheet>
+<link href=/css/tabs.css?1632861308 rel=stylesheet>
+<link href=/css/hugo-theme.css?1632861308 rel=stylesheet>
+<link href=/css/theme-yellow.css?1632861308 rel=stylesheet>
+<script src=/js/jquery-3.3.1.min.js?1632861308></script>
+<style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=/embedded/raspberryrp2040/>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<img src=/nimitalia.png>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span>
+</div>
+<script type=text/javascript src=/js/lunr.min.js?1632861308></script>
+<script type=text/javascript src=/js/auto-complete.js?1632861308></script>
+<script type=text/javascript>var baseurl="https://nim-italia.github.io/"</script>
+<script type=text/javascript src=/js/search.js?1632861308></script>
+</div>
+<section id=homelinks>
+<ul>
+<li>
+<a class=padding href=/><i class="fas fa-home"></i> Home</a>
+</li>
+</ul>
+</section>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/embedded/ title=Embedded class="dd-item
+parent">
+<a href=/embedded/>
+Embedded
+</a>
+<ul>
+<li data-nav-id=/embedded/raspberryrp2040/ title="Raspberry Pico RP2040" class="dd-item active">
+<a href=/embedded/raspberryrp2040/>
+Raspberry Pico RP2040
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/guide/ title=Guide class=dd-item>
+<a href=/guide/>
+Guide
+</a>
+<ul>
+<li data-nav-id=/guide/strutture-dati-e-puntatori/ title="Alias, Strutture Dati, Puntatori e Riferimenti" class=dd-item>
+<a href=/guide/strutture-dati-e-puntatori/>
+Alias, Strutture Dati, Puntatori e Riferimenti
+</a>
+</li>
+<li data-nav-id=/guide/funzioni/ title=Funzioni class=dd-item>
+<a href=/guide/funzioni/>
+Funzioni
+</a>
+</li>
+<li data-nav-id=/guide/var_let_const/ title="var, let e const" class=dd-item>
+<a href=/guide/var_let_const/>
+var, let e const
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=footer>
+<p>Built with <a href=https://github.com/matcornic/hugo-theme-learn><i class="fas fa-heart"></i></a> from <a href=https://getgrav.org>Grav</a> and <a href=https://gohugo.io/>Hugo</a></p>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable">
+<div>
+<div id=top-bar>
+<div id=top-github-link>
+<a class=github-link title="Edit this page" href=https://github.com/nim-italia/nim-italia.github.io/edit/main/content/Embedded/raspberryrp2040.md target=blank>
+<i class="fas fa-code-branch"></i>
+<span id=top-github-link-text>Edit this page</span>
+</a>
+</div>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fas fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links>
+<a href=/>Home</a> > <a href=/embedded/>Embedded</a> > Raspberry Pico RP2040
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents></nav>
+</div>
+</div>
+</div>
+</div>
+<div id=head-tags>
+</div>
+<div id=body-inner>
+<h1>
+Raspberry Pico RP2040
+</h1>
+<p><em><strong>Scritto da <a href=https://sites.google.com/view/martinix/home>Andrea Martin</a></strong></em></p>
+<p>il Raspberry Pico è una minucscola scheda che monda un piccolo, ma potente microprocessore dalle seguenti caratteristiche:</p>
+<ul>
+<li>Processore Dual-Core Arm Cortex M0+.</li>
+<li>Clock da 133Mhz.</li>
+<li>264Kb Sram e 2MB di falsch Memory on board.</li>
+<li>Usb 1.1</li>
+<li>26 pin I/O (multifunzione).</li>
+<li>Canali PWM, IC2, Dac-12bit.</li>
+<li>e molto altro&mldr;</li>
+</ul>
+<p>La programmazione &ldquo;naturale&rdquo; di questo dispositivo è ovviamente in C, ma ne parliamo qui perchè si stà sviluppando un wrapper per poterlo utilizzare anche con Nim. Ovviamente ce ancora molto lavoro da fare, ma con l&rsquo;ultima versione della libreria &ldquo;picostdlib&rdquo; si son fatti molti passi avanti, sopratutto sulla semplicità di avviare, compilare il nostro progetto, e non solo, abbiamo aggiunto funzionalità che potrebbero essere interessanti, qui puoi trovare la libreria:</p>
+<p>picostdlib link: <a href=https://github.com/beef331/picostdlib>https://github.com/beef331/picostdlib</a></p>
+<p>Oltre al controllo dei pin (input, outup, pullup, pulldown) in modalità classica,ultimamnete si son aggiunti due importanti funzioni per un microntrollore:</p>
+<ul>
+<li>La comunicazione in ingresso tramite usb, per mandare comandi al microcontrollore.</li>
+<li>l&rsquo;attivazione del bas i2c importante per dialogare con un infinità di hardware (bussole, accelerometri display ecc).</li>
+<li>modalità &ldquo;sugar&rdquo; per inizializzare i pin I/O del micro.</li>
+</ul>
+<p>Al momento ho anche sviluppato una semplice libreria per far leggere al micro, non solo i caratteri singoli inviati via usb, ma di prendere l&rsquo;intera stringa inviata, cosa molto utile per i protocolli di comunicazione verso lo stesso micro, in più sto scrivendo la libreria per un PCF8574 ovvero un I/O expander, ma sono ancora in sviluppo. Diseguito un breve esempio:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=color:#f92672>import</span> picostdlib<span style=color:#f92672>/[</span>gpio, i2c<span style=color:#f92672>]</span>
+<span style=color:#f92672>import</span> picostdlib
+
+<span style=color:#66d9ef>const</span> 
+  on <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>
+  off <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span>
+  p0: uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b00000001</span>
+  p1: uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b00000010</span>
+  p2: uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b00000100</span>
+  p3: uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b00001000</span>
+  p4: uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b00010000</span>
+  p5: uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b00100000</span>
+  p6: uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b01000000</span>
+  p7: uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b10000000</span>
+
+<span style=color:#66d9ef>type</span> 
+  Pcf8574 <span style=color:#f92672>=</span> <span style=color:#66d9ef>ref</span> <span style=color:#66d9ef>object</span> 
+    addressDevice: uint8
+    blockk: I2cInst
+    buffer: uint8
+
+<span style=color:#66d9ef>proc </span><span style=color:#a6e22e>writeBytex</span>(self: Pcf8574, dato:uint8 ) <span style=color:#f92672>=</span>
+  <span style=color:#66d9ef>let</span> dato <span style=color:#f92672>=</span> dato.unsafeAddr
+  writeBlocking(self.blockk, self.addressDevice, dato,<span style=color:#ae81ff>1</span>, <span style=color:#66d9ef>true</span>)
+
+<span style=color:#66d9ef>proc </span><span style=color:#a6e22e>digitaWrite</span>(self:Pcf8574,pin:uint8, value:<span style=color:#66d9ef>bool</span>) <span style=color:#f92672>=</span>
+  <span style=color:#66d9ef>if</span> value <span style=color:#f92672>==</span> on:
+    self.buffer <span style=color:#f92672>=</span> (self.buffer <span style=color:#f92672>or</span> pin)
+    writeBytex(self,self.buffer)
+  <span style=color:#66d9ef>elif</span> value <span style=color:#f92672>==</span> off:
+    self.buffer <span style=color:#f92672>=</span> (self.buffer <span style=color:#f92672>and</span> pin)
+    writeBytex(self,self.buffer)
+
+
+<span style=color:#66d9ef>when</span> isMainModule:
+  stdioInitAll()
+  <span style=color:#66d9ef>let</span> expander <span style=color:#f92672>=</span> Pcf8574(addressDevice: <span style=color:#ae81ff>0x20</span>, blockk: i2c0, buffer: <span style=color:#ae81ff>0b00000000</span>)
+
+  <span style=color:#66d9ef>const</span> sda <span style=color:#f92672>=</span> <span style=color:#ae81ff>0.</span>Gpio 
+  <span style=color:#66d9ef>const</span> scl <span style=color:#f92672>=</span> <span style=color:#ae81ff>1.</span>Gpio 
+  <span style=color:#66d9ef>const</span> address <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x20</span>
+  <span style=color:#66d9ef>var</span> buffer:uint8 <span style=color:#f92672>=</span> <span style=color:#ae81ff>0b00000000</span>
+
+  init(i2c0,<span style=color:#ae81ff>10000</span>)
+  sda.setFunction(I2C); sda.pullUp()
+  scl.setFunction(I2C); scl.pullUp()
+
+
+  <span style=color:#66d9ef>let</span> dato <span style=color:#f92672>=</span> buffer.unsafeAddr
+  i2c0.writeBlocking(address, dato,  <span style=color:#ae81ff>1</span>, <span style=color:#66d9ef>true</span>)
+  sleep(<span style=color:#ae81ff>1000</span>)
+
+  <span style=color:#66d9ef>while</span> <span style=color:#66d9ef>true</span>:
+    digitaWrite(expander,p1,on)
+    sleep(<span style=color:#ae81ff>1500</span>)
+    digitaWrite(expander,p4,on)
+    sleep(<span style=color:#ae81ff>1500</span>)
+    digitaWrite(expander,p1,off)
+    sleep(<span style=color:#ae81ff>1500</span>)
+    digitaWrite(expander,p4,off)
+    sleep(<span style=color:#ae81ff>1500</span>)</code></pre></div>
+<p>Ho anche fatto un piccolo scanner I2C per trovare gli indirizzi dei vari dispositivi che son sempre un incubo. qui puoi trovare le librerie/utility:</p>
+<p><a href=https://github.com/Martinix75/Raspberry_Pico.git>https://github.com/Martinix75/Raspberry_Pico.git</a></p>
+<p>ma sono ancora allo stato iniziale.</p>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=/js/clipboard.min.js?1632861308></script>
+<script src=/js/perfect-scrollbar.min.js?1632861308></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1632861308></script>
+<script src=/js/jquery.sticky.js?1632861308></script>
+<script src=/js/featherlight.min.js?1632861308></script>
+<script src=/js/highlight.pack.js?1632861308></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=/js/modernizr.custom-3.6.0.js?1632861308></script>
+<script src=/js/learn.js?1632861308></script>
+<script src=/js/hugo-learn.js?1632861308></script>
+<script src=/mermaid/mermaid.js?1632861308></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>
