@@ -1,0 +1,12 @@
+baseURL = 'https://nim-italia.github.io/'
+theme = "hugo-theme-learn"
+languageCode = 'it-it'
+title = 'Nim Italia'
+description = "Documentazione italiana del linguaggio di programmazione Nim"
+
+staticDir = ['static']
+[params]
+ themeVariant = "yellow"
+ disableNextPrev = true
+ author = "Nim Italia"
+ editURL = "https://github.com/nim-italia/nim-italia.github.io/edit/main/content/"

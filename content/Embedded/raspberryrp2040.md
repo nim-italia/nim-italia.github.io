@@ -1,6 +1,10 @@
 ---
+title: "Raspberry Pico RP2040"
+date: 2021-09-21T19:19:32+02:00
+draft: false
 ---
-# Raspberry Pico RP2040
+***Scritto da [Andrea Martin](https://sites.google.com/view/martinix/home)***
+
 il Raspberry Pico è una minucscola scheda che monda un piccolo, ma potente microprocessore dalle seguenti caratteristiche:
 - Processore Dual-Core Arm Cortex M0+.
 - Clock da 133Mhz.
@@ -21,7 +25,8 @@ Oltre al controllo dei pin (input, outup, pullup, pulldown) in modalità classic
 
 Al momento ho anche sviluppato una semplice libreria per far leggere al micro, non solo i caratteri singoli inviati via usb, ma di prendere l'intera stringa inviata, cosa molto utile per i protocolli di comunicazione verso lo stesso micro, in più sto scrivendo la libreria per un PCF8574 ovvero un I/O expander, ma sono ancora in sviluppo. Diseguito un breve esempio:
 
-{% highlight nim %}
+{{< highlight nim >}}
+
 import picostdlib/[gpio, i2c]
 import picostdlib
 
@@ -84,7 +89,7 @@ when isMainModule:
     digitaWrite(expander,p4,off)
     sleep(1500)
 
-{% endhighlight %}
+{{< / highlight >}}
 
 Ho anche fatto un piccolo scanner I2C per trovare gli indirizzi dei vari dispositivi che son sempre un incubo. qui puoi trovare le librerie/utility:
 

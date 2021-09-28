@@ -1,4 +1,9 @@
-# Alias, Strutture Dati, Puntatori e Riferimenti
+---
+title: "Alias, Strutture Dati, Puntatori e Riferimenti"
+draft: false
+---
+***Scritto da [Raffaele](https://rc-05.github.io/)***
+
 
 ## Alias
 
@@ -8,7 +13,7 @@ esistente tramite un altro nome.
 Se si utilizza la parola chiave `distinct` si definisce un tipo distinto ma che
 possiede lo stesso layout del tipo "sorgente".
 
-{% highlight nim %}
+{{< highlight nim >}}
 type
   Foo = uint
   ## Alias per un numero intero senza segno.
@@ -16,13 +21,13 @@ type
   Bar = distinct uint
   ## Definizione di un tipo distinto da uint ma che ha lo stesso layout
   ## in memoria.
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Strutture Dati
 
 Nim permette di creare una struttura dati tramite `object`.
 
-{% highlight nim %}
+{{< highlight nim >}}
 type
   Person = object
     name: string
@@ -30,7 +35,7 @@ type
 
 when isMainModule:
   let marco = Person(name = "Marco", age = 20)
-{% endhighlight %}
+{{< / highlight >}}
 
 ## Puntatori
 
@@ -39,7 +44,7 @@ Nim possiede due tipi di puntatori, tracciati e non.
 I puntatori non tracciati vengono dichiarati con `ptr` e devono
 essere gestiti dal programmatore.
 
-{% highlight nim %}
+{{< highlight nim >}}
 type
   Person = object
     name: string
@@ -47,7 +52,7 @@ type
 
   PersonPtr = ptr Person
   ## Crea un puntatore all'oggetto Person.
-{% endhighlight %}
+{{< / highlight >}}
 
 I puntatori hanno un tipo, ma possono essere implicitamente convertiti in
 `pointer`: quest'ultimo non dovrebbe essere usato se non per interfacciarsi
@@ -60,7 +65,7 @@ Nim mette a disposizione, come già anticipato, anche dei puntatori tracciati
 dal runtime, quindi non necessitano di essere gestiti dal programmatore.
 Essi vengono dichiarati con `ref`.
 
-{% highlight nim %}
+{{< highlight nim >}}
 type
   Person = object
     name: string
@@ -68,7 +73,7 @@ type
 
   PersonRef = ref object
   ## Crea un riferimento tracciato all'oggetto Person.
-{% endhighlight %}
+{{< / highlight >}}
 
 I puntatori tracciati (o riferimenti) possono essere usati come parametri di
 funzioni per permettere di passare direttamente un riferimento ad un oggetto

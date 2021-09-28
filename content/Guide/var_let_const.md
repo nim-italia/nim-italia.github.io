@@ -1,9 +1,15 @@
+---
+title: "var, let e const"
+draft: false
+---
+***Scritto da [Andrea Manzini](https://ilmanzo.github.io/)***
+
 questo articolo è stato tradotto da [Nim by Example](https://nim-by-example.github.io/)
 
 
 ### var: variabili mutabili
 
-{% highlight nim %}
+{{< highlight nim >}}
 var
   a = "pippo"
   b = 0
@@ -16,11 +22,11 @@ b += 1
 c = 3
 
 echo a,b,c
-{% endhighlight %}
+{{< / highlight >}}
 
 ### let: variabili immutabili
 
-{% highlight nim %}
+{{< highlight nim >}}
 let
   d = "tizio"
   e = 5
@@ -29,10 +35,10 @@ let
 # assegnare nuovi valori a queste variabili, `d` and `e`, causerebbe errore di compilazione
 #d.add("caio")
 #e += 1
-{% endhighlight %}
+{{< / highlight >}}
 
 ### const: costanti 
-{% highlight nim %}
+{{< highlight nim >}}
 const PI = 3.14159265
 
 proc getAlphabet(): string =
@@ -45,10 +51,12 @@ const alphabet = getAlphabet()
 echo alphabet
 
 #alphabet = "abc" # questo genera un errore di compilazione, era stata dichiarata come costante 
-{% endhighlight %}
+{{< / highlight >}}
 
 per curiosità, se sbirci nel codice C generato, troverai una riga del tipo 
 
-    STRING_LITERAL(TM__wIAuO6fGZn7Wh9cwbqAvZtw_9, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 26);
+{{< highlight c >}}
+STRING_LITERAL(TM__wIAuO6fGZn7Wh9cwbqAvZtw_9, "ABCDEFGHIJKLMNOPQRSTUVWXYZ", 26);
+{{< / highlight >}}
 
 generata dal compilatore Nim, che esegue il codice indicato durante la compilazione e crea la costante.
