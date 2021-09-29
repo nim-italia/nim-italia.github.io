@@ -13,7 +13,7 @@ questo articolo è stato tradotto da [Nim by Example](https://nim-by-example.git
 var
   a = "pippo"
   b = 0
-  # Works fine, initialized to 0
+  # se non viene specificato nessun valore, e' inizializzato a 0
   c: int
 
 # funziona, le variabili sono mutable
