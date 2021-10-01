@@ -6,7 +6,7 @@
 <meta name=description content>
 <meta name=author content="Nim Italia">
 <link rel=icon href=/images/favicon.png type=image/png>
-<title>Guide :: Nim Italia</title>
+<title>PCF8574 :: Nim Italia</title>
 <link href=/css/nucleus.css?1633117955 rel=stylesheet>
 <link href=/css/fontawesome-all.min.css?1633117955 rel=stylesheet>
 <link href=/css/hybrid.css?1633117955 rel=stylesheet>
@@ -21,7 +21,7 @@
 <script src=/js/jquery-3.3.1.min.js?1633117955></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
-<body data-url=/guide/>
+<body data-url=/embedded/pcf8574/>
 <nav id=sidebar>
 <div id=header-wrapper>
 <div id=header>
@@ -46,12 +46,13 @@
 </section>
 <div class=highlightable>
 <ul class=topics>
-<li data-nav-id=/embedded/ title=Embedded class=dd-item>
+<li data-nav-id=/embedded/ title=Embedded class="dd-item
+parent">
 <a href=/embedded/>
 Embedded
 </a>
 <ul>
-<li data-nav-id=/embedded/pcf8574/ title=PCF8574 class=dd-item>
+<li data-nav-id=/embedded/pcf8574/ title=PCF8574 class="dd-item active">
 <a href=/embedded/pcf8574/>
 PCF8574
 </a>
@@ -63,9 +64,7 @@ Raspberry Pico RP2040
 </li>
 </ul>
 </li>
-<li data-nav-id=/guide/ title=Guide class="dd-item
-parent
-active">
+<li data-nav-id=/guide/ title=Guide class=dd-item>
 <a href=/guide/>
 Guide
 </a>
@@ -99,7 +98,7 @@ var, let e const
 <div>
 <div id=top-bar>
 <div id=top-github-link>
-<a class=github-link title="Edit this page" href=https://github.com/nim-italia/nim-italia.github.io/edit/main/content/Guide/_index.md target=blank>
+<a class=github-link title="Edit this page" href=https://github.com/nim-italia/nim-italia.github.io/edit/main/content/Embedded/pcf8574.md target=blank>
 <i class="fas fa-code-branch"></i>
 <span id=top-github-link-text>Edit this page</span>
 </a>
@@ -112,7 +111,7 @@ var, let e const
 </span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
 <span class=links>
-<a href=/>Home</a> > Guide
+<a href=/>Home</a> > <a href=/embedded/>Embedded</a> > PCF8574
 </span>
 </div>
 <div class=progress>
@@ -126,9 +125,53 @@ var, let e const
 </div>
 <div id=body-inner>
 <h1>
-Guide
+PCF8574
 </h1>
-<p>Qui potrai trovare delle guide su come funziona il linguaggio di programmazione Nim, partendo dalle basi fino ad arrivare a concetti avanzati.</p>
+<p><em><strong>Scritto da <a href=https://sites.google.com/view/martinix/home>Andrea Martin</a></strong></em></p>
+<p>In questo articolo parlerò un pò del PCF8574, ma a cosa fa capo questa strana sigla? il PCF8574 è integrato I/O expander quasi-biderezionale a 8 bit indirizzabile sul bus I2c. Il nostro Raspbery Pico ha molti pin utilizzabili come ingressi o uscite digitali, ma possono esaurirsi veramente in fretta se il nostro progetto ne richiede molti, per non parlare se poi dovessimo utilizzare un display. Allora ecco che questo piccolo ma utile componente ci da la possibilità di avere molti più pin disponibili, sia in ingresso che in uscita. Se hai notato prima ho scritto &ldquo;quasi-bidirezionale&rdquo;, sta a significare che si lui può operare in come uscita o come ingresso, ma non entrambe le cose, in altre parole, o lo si usa sempre come input o sempre come output per tutti i bit. Il suo uso di base è molto semplce, si manda un byte sulla i2c e lui lo ripopone sulle sue uscite in maniera trasparente.</p>
+<p><a href=https://www.ti.com/lit/ds/symlink/pcf8574.pdf>https://www.ti.com/lit/ds/symlink/pcf8574.pdf</a></p>
+<p>esempio:
+mando su I2c il byte 10101010 (0xaa) &ndash;> sul pcf avro p7=1, p6=0, p5=1&mldr; p0=0</p>
+<p>Fio a qui nulla di complicato, si complica un pò quando uno vorrebbe scrivre o leggere un solo bit, magari per accendere un led, ecco che allora bisogna cominciare a &ldquo;giocare&rdquo; con i bit e le maschere, ma niente paura ho sviluppato una libreria ovviamente in Nim che si prende lei in carico il lavoro noioso e a te non resta altro che dire quale bit leggere o scrivere in maniera molto semplice; ecco un esempio:</p>
+<p>{% highlight nim %}
+import pcf8574
+stdioInitAll()
+let exp1 = Pcf8574(addressDevice: 0x20, blockk: i2c1)# buffer: 0x00 initializes the object if necessary
+const sda = 2.Gpio
+const scl = 3.Gpio
+const address = 0x20
+init(i2c1,10000)
+sda.setFunction(I2C); sda.pullUp()
+scl.setFunction(I2C); scl.pullUp()</p>
+<p>while true:
+exp1.setHigh() #set all led on
+sleep(1000)
+exp1.digitWrite(p1, on) #turn on the bit &ldquo;p1&rdquo;
+sleep(1000)
+exp1.digitWrite(p4, on) #turn on the bit &ldquo;p4&rdquo;
+sleep(1000)
+exp1.digitWrite(p1, off) #turn off the bit &ldquo;p1&rdquo;
+sleep(1000)
+exp1.digitWrite(p4, off) #turn off the bit &ldquo;p4&rdquo; ]#
+sleep(1000)
+exp1.writeBytex(0xaa) #alternating leds
+sleep(1000)
+exp1.setLow() #set all led off
+sleep(1000)
+{% endhighlight %}</p>
+<p>Come detto prima questo componente è (quasi)bidirezionale, quindi possiamo anche andare a leggere il byte presente sui pin dell&rsquo;integrato e si può fare come nell&rsquo;esempio sotto(scrivero solo il pezzo dentro al while:</p>
+<p>{% highlight nim %}
+while true:
+var lettura = [uint8(0)] #create a variable uint8 = 0
+exp1.readBytex(lettura) #read all byte on device
+print(&ldquo;Leggo sul expander: " & $lettura[0]) #stampa tutto il byte
+var p3val = exp1.digitRead(p3) #assigns p3val only the value of bit p3 (bool)
+print(&ldquo;P3= " & $p3val) #prints the value of bit p3
+{% endhighlight %}</p>
+<p>Ora che si può conoscere lo stato di quel singolo bit, si può per esempio collegaci un pulsante o un qualche sensore on/off, poi compito del programmatore vedre che farne.
+Si la sintassi di configurazione di I2c è un pò macchinosa, ma nel caso accettino il commit fatto per semplificarla provvederò ad aggiornare.
+Come di consueto la libreria si pò trovare in:</p>
+<p><a href=https://github.com/Martinix75/Raspberry_Pico>https://github.com/Martinix75/Raspberry_Pico</a></p>
 <footer class=footline>
 </footer>
 </div>
