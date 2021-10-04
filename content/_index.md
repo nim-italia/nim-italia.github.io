@@ -11,8 +11,15 @@ when isMainModule:
    echo "Benvenuti!"
 {{< / highlight >}}
 
-
 Questa è una documentazione creata da parte della community per aiutare sviluppatori a comprendere il linguaggio di programmazione Nim completamente in italiano.
 
-## Contribuire
+## Ultimi articoli pubblicati:
+
+- [pcf8574]({{< ref "/Embedded/pcf8574" >}})
+- [Raspberry Pico]({{< ref "/Embedded/raspberryrp2040" >}})
+- [introduzione alle funzioni]({{< ref "/Guide/funzioni">}})
+- [strutture dati e puntatori]({{< ref "/Guide/strutture-dati-e-puntatori" >}})
+- [var, let e const]({{< ref "/Guide/var_let_const" >}})
+
+## Come contribuire:
 Tutti possono aiutare a rendere questo sito migliore! Puoi trovarci sul [gruppo Telegram dedicato](https://t.me/nimitalia) e su [GitHub](https://github.com/nim-italia/nim-italia.github.io).
