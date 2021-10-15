@@ -15,6 +15,7 @@ Questa è una documentazione creata da parte della community per aiutare svilupp
 
 ## Ultimi articoli pubblicati:
 
+- [dividere per zero: verso l'infinito ed oltre]({{< ref "/guide/div_by_zero" >}})
 - [pcf8574]({{< ref "/Embedded/pcf8574" >}})
 - [Raspberry Pico]({{< ref "/Embedded/raspberryrp2040" >}})
 - [introduzione alle funzioni]({{< ref "/Guide/funzioni">}})
