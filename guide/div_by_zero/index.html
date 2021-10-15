@@ -1,0 +1,195 @@
+<!doctype html><html lang=en class="js csstransforms3d">
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=generator content="Hugo 0.88.1">
+<meta name=description content>
+<meta name=author content="Nim Italia">
+<link rel=icon href=/images/favicon.png type=image/png>
+<title>dividere per zero in Nim :: Nim Italia</title>
+<link href=/css/nucleus.css?1634279634 rel=stylesheet>
+<link href=/css/fontawesome-all.min.css?1634279634 rel=stylesheet>
+<link href=/css/hybrid.css?1634279634 rel=stylesheet>
+<link href=/css/featherlight.min.css?1634279634 rel=stylesheet>
+<link href=/css/perfect-scrollbar.min.css?1634279634 rel=stylesheet>
+<link href=/css/auto-complete.css?1634279634 rel=stylesheet>
+<link href=/css/atom-one-dark-reasonable.css?1634279634 rel=stylesheet>
+<link href=/css/theme.css?1634279634 rel=stylesheet>
+<link href=/css/tabs.css?1634279634 rel=stylesheet>
+<link href=/css/hugo-theme.css?1634279634 rel=stylesheet>
+<link href=/css/theme-yellow.css?1634279634 rel=stylesheet>
+<script src=/js/jquery-3.3.1.min.js?1634279634></script>
+<style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
+</head>
+<body data-url=/guide/div_by_zero/>
+<nav id=sidebar>
+<div id=header-wrapper>
+<div id=header>
+<img src=/nimitalia.png>
+</div>
+<div class=searchbox>
+<label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span>
+</div>
+<script type=text/javascript src=/js/lunr.min.js?1634279634></script>
+<script type=text/javascript src=/js/auto-complete.js?1634279634></script>
+<script type=text/javascript>var baseurl="https://nim-italia.github.io/"</script>
+<script type=text/javascript src=/js/search.js?1634279634></script>
+</div>
+<section id=homelinks>
+<ul>
+<li>
+<a class=padding href=/><i class="fas fa-home"></i> Home</a>
+</li>
+</ul>
+</section>
+<div class=highlightable>
+<ul class=topics>
+<li data-nav-id=/embedded/ title=Embedded class=dd-item>
+<a href=/embedded/>
+Embedded
+</a>
+<ul>
+<li data-nav-id=/embedded/pcf8574/ title=PCF8574 class=dd-item>
+<a href=/embedded/pcf8574/>
+PCF8574
+</a>
+</li>
+<li data-nav-id=/embedded/raspberryrp2040/ title="Raspberry Pico RP2040" class=dd-item>
+<a href=/embedded/raspberryrp2040/>
+Raspberry Pico RP2040
+</a>
+</li>
+</ul>
+</li>
+<li data-nav-id=/guide/ title=Guide class="dd-item
+parent">
+<a href=/guide/>
+Guide
+</a>
+<ul>
+<li data-nav-id=/guide/strutture-dati-e-puntatori/ title="Alias, Strutture Dati, Puntatori e Riferimenti" class=dd-item>
+<a href=/guide/strutture-dati-e-puntatori/>
+Alias, Strutture Dati, Puntatori e Riferimenti
+</a>
+</li>
+<li data-nav-id=/guide/div_by_zero/ title="dividere per zero in Nim" class="dd-item active">
+<a href=/guide/div_by_zero/>
+dividere per zero in Nim
+</a>
+</li>
+<li data-nav-id=/guide/funzioni/ title=Funzioni class=dd-item>
+<a href=/guide/funzioni/>
+Funzioni
+</a>
+</li>
+<li data-nav-id=/guide/var_let_const/ title="var, let e const" class=dd-item>
+<a href=/guide/var_let_const/>
+var, let e const
+</a>
+</li>
+</ul>
+</li>
+</ul>
+<section id=footer>
+<p>Built with <a href=https://github.com/matcornic/hugo-theme-learn><i class="fas fa-heart"></i></a> from <a href=https://getgrav.org>Grav</a> and <a href=https://gohugo.io/>Hugo</a></p>
+</section>
+</div>
+</nav>
+<section id=body>
+<div id=overlay></div>
+<div class="padding highlightable">
+<div>
+<div id=top-bar>
+<div id=top-github-link>
+<a class=github-link title="Edit this page" href=https://github.com/nim-italia/nim-italia.github.io/edit/main/content/Guide/div_by_zero.md target=blank>
+<i class="fas fa-code-branch"></i>
+<span id=top-github-link-text>Edit this page</span>
+</a>
+</div>
+<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
+<span id=sidebar-toggle-span>
+<a href=# id=sidebar-toggle data-sidebar-toggle>
+<i class="fas fa-bars"></i>
+</a>
+</span>
+<span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links>
+<a href=/>Home</a> > <a href=/guide/>Guide</a> > dividere per zero in Nim
+</span>
+</div>
+<div class=progress>
+<div class=wrapper>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#verso-linfinito-e-oltre>&ldquo;verso l&rsquo;infinito, e oltre&rdquo;</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+</div>
+<div id=head-tags>
+</div>
+<div id=body-inner>
+<h1>
+dividere per zero in Nim
+</h1>
+<p><em><strong>Scritto da <a href=https://ilmanzo.github.io/>Andrea Manzini</a></strong></em></p>
+<h3 id=verso-linfinito-e-oltre>&ldquo;verso l&rsquo;infinito, e oltre&rdquo;</h3>
+<p>Storicamente nei calcolatori la divisione per zero, in quanto operazione impossibile, è sempre stata gestita in modo problematico. I primi calcolatori elettromeccanici si inceppavano ed entravano in un <a href="https://www.youtube.com/watch?v=WLFVZXhn1Qc">loop infinito</a>, dal quale si poteva uscire solo con una <a href="https://www.youtube.com/watch?v=7Kd3R_RlXgc">apposita operazione</a> o spegnendo e riaccendendo tutta la macchina, che a causa dello sforzo richiesto rischiava anche di deteriorarsi e/o subire danni fisici.</p>
+<p>In Nim la situazione non è così drammatica ma può portare ad alcune sorprese. Anzitutto se proviamo con un</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=color:#66d9ef>let</span> x<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span><span style=color:#f92672>/</span><span style=color:#ae81ff>0</span>
+echo <span style=color:#e6db74>&#34;Risultato=&#34;</span>, x
+
+Risultato<span style=color:#f92672>=</span>inf</code></pre></div>
+<p>a primo impatto otteniamo un valore <em>infinito</em> , che ci da anche problemi nel caso volessimo testare tale eventualità. Non possiamo infatti confrontare nessun numero con &ldquo;inf&rdquo; perchè sarebbe un simbolo non contemplato dal linguaggio.</p>
+<p>Un modo corretto per identificare il caso, o meglio <em>classificarlo</em>, potrebbe essere ad esempio</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=color:#f92672>import</span> math
+<span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> countup(<span style=color:#f92672>-</span><span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>5</span>):
+  <span style=color:#66d9ef>let</span> x<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span><span style=color:#f92672>/</span>n  
+  <span style=color:#66d9ef>if</span> x.classify <span style=color:#f92672>==</span> fcInf:
+    echo <span style=color:#e6db74>&#34;hai diviso per zero&#34;</span>  
+  <span style=color:#66d9ef>else</span>:    
+    echo <span style=color:#e6db74>&#34;Risultato=&#34;</span>,x</code></pre></div>
+<p>questa apparente <em>&ldquo;stranezza&rdquo;</em> viene dal fatto che la divisione con l&rsquo;operatore <strong>/</strong> è sempre una divisione float, e dato che Nim rispetta <a href=https://it.wikipedia.org/wiki/IEEE_754>lo standard per il calcolo a virgola mobile IEEE 754</a>, otteniamo il risultato previsto dallo standard. Per chi volesse approfondire la questione, <a href=https://people.eecs.berkeley.edu/~wkahan/ieee754status/IEEE754.PDF>lascio un link al documento</a>.</p>
+<p>Se volessimo un comportamento alternativo, possiamo ad esempio utilizzare l&rsquo;operazione di divisione intera con l&rsquo;operatore <strong>div</strong> :</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=color:#f92672>import</span> math
+<span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> countup(<span style=color:#f92672>-</span><span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>5</span>):
+  <span style=color:#66d9ef>let</span> x<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span> <span style=color:#f92672>div</span> n  
+  echo <span style=color:#e6db74>&#34;Risultato=&#34;</span>,x</code></pre></div>
+<p>eseguendo questo codice, otteniamo un errore sotto forma di <strong>Exception</strong>, che a questo punto saremo in grado di <a href=https://nim-lang.org/docs/tut2.html#exceptions>gestire</a> con il costrutto <code>try .. except</code> del linguaggio.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim>Error: unhandled exception: division by zero <span style=color:#f92672>[</span>DivByZeroDefect<span style=color:#f92672>]</span></code></pre></div>
+<p>come considerazione finale: anche Hitler ha imparato a sue spese che non si può dividere per zero &mldr;</p>
+<div style=position:relative;padding-bottom:56.25%;height:0;overflow:hidden>
+<iframe src=https://www.youtube.com/embed/FuTz3NL32AM style=position:absolute;top:0;left:0;width:100%;height:100%;border:0 allowfullscreen title="YouTube Video"></iframe>
+</div>
+<footer class=footline>
+</footer>
+</div>
+</div>
+<div id=navigation>
+</div>
+</section>
+<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
+<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
+</div>
+<script src=/js/clipboard.min.js?1634279634></script>
+<script src=/js/perfect-scrollbar.min.js?1634279634></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1634279634></script>
+<script src=/js/jquery.sticky.js?1634279634></script>
+<script src=/js/featherlight.min.js?1634279634></script>
+<script src=/js/highlight.pack.js?1634279634></script>
+<script>hljs.initHighlightingOnLoad()</script>
+<script src=/js/modernizr.custom-3.6.0.js?1634279634></script>
+<script src=/js/learn.js?1634279634></script>
+<script src=/js/hugo-learn.js?1634279634></script>
+<script src=/mermaid/mermaid.js?1634279634></script>
+<script>mermaid.initialize({startOnLoad:!0})</script>
+</body>
+</html>
