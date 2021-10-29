@@ -4,6 +4,9 @@ draft: false
 --- 
 ***Scritto da [Andrea Martin](https://sites.google.com/view/martinix/home)***
 
+![display](/images/embedded/Display2.png)
+
+
 In questo articolo, presento la libreria per gestire i display tipo 1602 pilotati via I2C. Lo ammetto questa libreria non è interamente farina del mio sacco, in quanto son partio dalle equivalenti in microPython per poi scriverle in Nim. Di mio ho aggiunto però delle procedure per gestire le stringhe sul display, ad esempio la centratura e lo scorrimento delle stesse. Se scrivere la libreria è stato comuqnue abbastanza complesso, usarla per visualizzare le nostre cose, spero di averla resa semplice. Vediamo le procedure (pubbliche) che si possono usare:
 
 1. **initDysplay**: inizializza il display fornendo alla libreria il blocco (i2c0 o i2c1) , lindirizzo del dispositivo, il numero di colonne ed il numero di righe disponibili, dati molto importanti per il corretto funzionamento, quindi prestare attenzione.
@@ -43,3 +46,4 @@ Ci cono poi altre procedure come *backLigtOff / backLigtOn* oppure *showCursor /
 
 <https://github.com/Martinix75/Raspberry_Pico/tree/main/Libs/display1602>
 
+{{< figure src="/images/embedded/Display2_a.jpg" title="display" >}}
