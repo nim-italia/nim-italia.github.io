@@ -7,18 +7,18 @@
 <meta name=author content="Nim Italia">
 <link rel=icon href=/images/favicon.png type=image/png>
 <title>dividere per zero in Nim :: Nim Italia</title>
-<link href=/css/nucleus.css?1635518112 rel=stylesheet>
-<link href=/css/fontawesome-all.min.css?1635518112 rel=stylesheet>
-<link href=/css/hybrid.css?1635518112 rel=stylesheet>
-<link href=/css/featherlight.min.css?1635518112 rel=stylesheet>
-<link href=/css/perfect-scrollbar.min.css?1635518112 rel=stylesheet>
-<link href=/css/auto-complete.css?1635518112 rel=stylesheet>
-<link href=/css/atom-one-dark-reasonable.css?1635518112 rel=stylesheet>
-<link href=/css/theme.css?1635518112 rel=stylesheet>
-<link href=/css/tabs.css?1635518112 rel=stylesheet>
-<link href=/css/hugo-theme.css?1635518112 rel=stylesheet>
-<link href=/css/theme-yellow.css?1635518112 rel=stylesheet>
-<script src=/js/jquery-3.3.1.min.js?1635518112></script>
+<link href=/css/nucleus.css?1635519682 rel=stylesheet>
+<link href=/css/fontawesome-all.min.css?1635519682 rel=stylesheet>
+<link href=/css/hybrid.css?1635519682 rel=stylesheet>
+<link href=/css/featherlight.min.css?1635519682 rel=stylesheet>
+<link href=/css/perfect-scrollbar.min.css?1635519682 rel=stylesheet>
+<link href=/css/auto-complete.css?1635519682 rel=stylesheet>
+<link href=/css/atom-one-dark-reasonable.css?1635519682 rel=stylesheet>
+<link href=/css/theme.css?1635519682 rel=stylesheet>
+<link href=/css/tabs.css?1635519682 rel=stylesheet>
+<link href=/css/hugo-theme.css?1635519682 rel=stylesheet>
+<link href=/css/theme-yellow.css?1635519682 rel=stylesheet>
+<script src=/js/jquery-3.3.1.min.js?1635519682></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=/guide/div_by_zero/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/js/lunr.min.js?1635518112></script>
-<script type=text/javascript src=/js/auto-complete.js?1635518112></script>
+<script type=text/javascript src=/js/lunr.min.js?1635519682></script>
+<script type=text/javascript src=/js/auto-complete.js?1635519682></script>
 <script type=text/javascript>var baseurl="https://nim-italia.github.io/"</script>
-<script type=text/javascript src=/js/search.js?1635518112></script>
+<script type=text/javascript src=/js/search.js?1635519682></script>
 </div>
 <section id=homelinks>
 <ul>
@@ -163,7 +163,8 @@ Risultato<span style=color:#f92672>=</span>inf</code></pre></div>
   <span style=color:#66d9ef>else</span>:    
     echo <span style=color:#e6db74>&#34;Risultato=&#34;</span>,x</code></pre></div>
 <p>questa apparente <em>&ldquo;stranezza&rdquo;</em> viene dal fatto che la divisione con l&rsquo;operatore <strong>/</strong> è sempre una divisione float, e dato che Nim rispetta <a href=https://it.wikipedia.org/wiki/IEEE_754>lo standard per il calcolo a virgola mobile IEEE 754</a>, otteniamo il risultato previsto dallo standard. Per chi volesse approfondire la questione, <a href=https://people.eecs.berkeley.edu/~wkahan/ieee754status/IEEE754.PDF>lascio un link al documento</a>.</p>
-<p>Se volessimo un comportamento alternativo, possiamo ad esempio utilizzare l&rsquo;operazione di divisione intera con l&rsquo;operatore <strong>div</strong> :</p>
+<p>Se invece del risultato <strong>inf</strong> volessimo avere sollevata una eccezione, possiamo compilare il codice con lo switch <code>--infChecks:on</code>.</p>
+<p>L&rsquo;eccezione è il comportamento di default quando usiamo l&rsquo;operazione di divisione intera con l&rsquo;operatore <strong>div</strong> :</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=color:#f92672>import</span> math
 <span style=color:#66d9ef>for</span> n <span style=color:#f92672>in</span> countup(<span style=color:#f92672>-</span><span style=color:#ae81ff>5</span>,<span style=color:#ae81ff>5</span>):
   <span style=color:#66d9ef>let</span> x<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span> <span style=color:#f92672>div</span> n  
@@ -184,17 +185,17 @@ Risultato<span style=color:#f92672>=</span>inf</code></pre></div>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/js/clipboard.min.js?1635518112></script>
-<script src=/js/perfect-scrollbar.min.js?1635518112></script>
-<script src=/js/perfect-scrollbar.jquery.min.js?1635518112></script>
-<script src=/js/jquery.sticky.js?1635518112></script>
-<script src=/js/featherlight.min.js?1635518112></script>
-<script src=/js/highlight.pack.js?1635518112></script>
+<script src=/js/clipboard.min.js?1635519682></script>
+<script src=/js/perfect-scrollbar.min.js?1635519682></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1635519682></script>
+<script src=/js/jquery.sticky.js?1635519682></script>
+<script src=/js/featherlight.min.js?1635519682></script>
+<script src=/js/highlight.pack.js?1635519682></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/js/modernizr.custom-3.6.0.js?1635518112></script>
-<script src=/js/learn.js?1635518112></script>
-<script src=/js/hugo-learn.js?1635518112></script>
-<script src=/mermaid/mermaid.js?1635518112></script>
+<script src=/js/modernizr.custom-3.6.0.js?1635519682></script>
+<script src=/js/learn.js?1635519682></script>
+<script src=/js/hugo-learn.js?1635519682></script>
+<script src=/mermaid/mermaid.js?1635519682></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>

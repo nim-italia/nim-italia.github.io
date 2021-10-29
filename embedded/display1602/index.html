@@ -7,18 +7,18 @@
 <meta name=author content="Nim Italia">
 <link rel=icon href=/images/favicon.png type=image/png>
 <title>Display1602 :: Nim Italia</title>
-<link href=/css/nucleus.css?1635518112 rel=stylesheet>
-<link href=/css/fontawesome-all.min.css?1635518112 rel=stylesheet>
-<link href=/css/hybrid.css?1635518112 rel=stylesheet>
-<link href=/css/featherlight.min.css?1635518112 rel=stylesheet>
-<link href=/css/perfect-scrollbar.min.css?1635518112 rel=stylesheet>
-<link href=/css/auto-complete.css?1635518112 rel=stylesheet>
-<link href=/css/atom-one-dark-reasonable.css?1635518112 rel=stylesheet>
-<link href=/css/theme.css?1635518112 rel=stylesheet>
-<link href=/css/tabs.css?1635518112 rel=stylesheet>
-<link href=/css/hugo-theme.css?1635518112 rel=stylesheet>
-<link href=/css/theme-yellow.css?1635518112 rel=stylesheet>
-<script src=/js/jquery-3.3.1.min.js?1635518112></script>
+<link href=/css/nucleus.css?1635519682 rel=stylesheet>
+<link href=/css/fontawesome-all.min.css?1635519682 rel=stylesheet>
+<link href=/css/hybrid.css?1635519682 rel=stylesheet>
+<link href=/css/featherlight.min.css?1635519682 rel=stylesheet>
+<link href=/css/perfect-scrollbar.min.css?1635519682 rel=stylesheet>
+<link href=/css/auto-complete.css?1635519682 rel=stylesheet>
+<link href=/css/atom-one-dark-reasonable.css?1635519682 rel=stylesheet>
+<link href=/css/theme.css?1635519682 rel=stylesheet>
+<link href=/css/tabs.css?1635519682 rel=stylesheet>
+<link href=/css/hugo-theme.css?1635519682 rel=stylesheet>
+<link href=/css/theme-yellow.css?1635519682 rel=stylesheet>
+<script src=/js/jquery-3.3.1.min.js?1635519682></script>
 <style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
 </head>
 <body data-url=/embedded/display1602/>
@@ -32,10 +32,10 @@
 <input data-search-input id=search-by type=search placeholder=Search...>
 <span data-search-clear><i class="fas fa-times"></i></span>
 </div>
-<script type=text/javascript src=/js/lunr.min.js?1635518112></script>
-<script type=text/javascript src=/js/auto-complete.js?1635518112></script>
+<script type=text/javascript src=/js/lunr.min.js?1635519682></script>
+<script type=text/javascript src=/js/auto-complete.js?1635519682></script>
 <script type=text/javascript>var baseurl="https://nim-italia.github.io/"</script>
-<script type=text/javascript src=/js/search.js?1635518112></script>
+<script type=text/javascript src=/js/search.js?1635519682></script>
 </div>
 <section id=homelinks>
 <ul>
@@ -138,6 +138,7 @@ var, let e const
 Display1602
 </h1>
 <p><em><strong>Scritto da <a href=https://sites.google.com/view/martinix/home>Andrea Martin</a></strong></em></p>
+<p><img src=/images/embedded/Display2.png alt=display></p>
 <p>In questo articolo, presento la libreria per gestire i display tipo 1602 pilotati via I2C. Lo ammetto questa libreria non è interamente farina del mio sacco, in quanto son partio dalle equivalenti in microPython per poi scriverle in Nim. Di mio ho aggiunto però delle procedure per gestire le stringhe sul display, ad esempio la centratura e lo scorrimento delle stesse. Se scrivere la libreria è stato comuqnue abbastanza complesso, usarla per visualizzare le nostre cose, spero di averla resa semplice. Vediamo le procedure (pubbliche) che si possono usare:</p>
 <ol>
 <li><strong>initDysplay</strong>: inizializza il display fornendo alla libreria il blocco (i2c0 o i2c1) , lindirizzo del dispositivo, il numero di colonne ed il numero di righe disponibili, dati molto importanti per il corretto funzionamento, quindi prestare attenzione.</li>
@@ -204,6 +205,10 @@ lcd.putChar(char(0))</em></p>
 </blockquote>
 <p>Ci cono poi altre procedure come <em>backLigtOff / backLigtOn</em> oppure <em>showCursor / hideCursor</em> che gai dal nome dovrebbe essere molto chiaro cosa fanno quindi su di esse non mi soffermo. Nell&rsquo;indirizzo qui sotto, oltre alla libreria si possono trovare alcuni semplici file di esempio che riassumono quanto scritto sopra. Ora dovremmo avere tutto il necessario per divertirci con il nostro display.</p>
 <p><a href=https://github.com/Martinix75/Raspberry_Pico/tree/main/Libs/display1602>https://github.com/Martinix75/Raspberry_Pico/tree/main/Libs/display1602</a></p>
+<figure><img src=/images/embedded/Display2_a.jpg><figcaption>
+<h4>display</h4>
+</figcaption>
+</figure>
 <footer class=footline>
 </footer>
 </div>
@@ -214,17 +219,17 @@ lcd.putChar(char(0))</em></p>
 <div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
 <div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
 </div>
-<script src=/js/clipboard.min.js?1635518112></script>
-<script src=/js/perfect-scrollbar.min.js?1635518112></script>
-<script src=/js/perfect-scrollbar.jquery.min.js?1635518112></script>
-<script src=/js/jquery.sticky.js?1635518112></script>
-<script src=/js/featherlight.min.js?1635518112></script>
-<script src=/js/highlight.pack.js?1635518112></script>
+<script src=/js/clipboard.min.js?1635519682></script>
+<script src=/js/perfect-scrollbar.min.js?1635519682></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1635519682></script>
+<script src=/js/jquery.sticky.js?1635519682></script>
+<script src=/js/featherlight.min.js?1635519682></script>
+<script src=/js/highlight.pack.js?1635519682></script>
 <script>hljs.initHighlightingOnLoad()</script>
-<script src=/js/modernizr.custom-3.6.0.js?1635518112></script>
-<script src=/js/learn.js?1635518112></script>
-<script src=/js/hugo-learn.js?1635518112></script>
-<script src=/mermaid/mermaid.js?1635518112></script>
+<script src=/js/modernizr.custom-3.6.0.js?1635519682></script>
+<script src=/js/learn.js?1635519682></script>
+<script src=/js/hugo-learn.js?1635519682></script>
+<script src=/mermaid/mermaid.js?1635519682></script>
 <script>mermaid.initialize({startOnLoad:!0})</script>
 </body>
 </html>
