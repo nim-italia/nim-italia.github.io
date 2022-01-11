@@ -14,6 +14,7 @@ when isMainModule:
 Questa è una documentazione creata da parte della community per aiutare sviluppatori a comprendere il linguaggio di programmazione Nim completamente in italiano.
 
 ## Ultimi articoli pubblicati:
+- [Array e Sequenze]({{< ref "/Guide/array_sequenze" >}})
 - [pilotare il display 1602 via I2c]({{< ref "/Embedded/display1602" >}})
 - [dividere per zero: verso l'infinito ed oltre]({{< ref "/guide/div_by_zero" >}})
 - [pcf8574]({{< ref "/Embedded/pcf8574" >}})
