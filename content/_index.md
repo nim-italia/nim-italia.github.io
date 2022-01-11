@@ -22,5 +22,8 @@ Questa è una documentazione creata da parte della community per aiutare svilupp
 - [strutture dati e puntatori]({{< ref "/Guide/strutture-dati-e-puntatori" >}})
 - [var, let e const]({{< ref "/Guide/var_let_const" >}})
 
+## Link alla documentazione:
+- [Questa pagina]({{< ref "doc_index" >}}) contiene vari link a documentazione e tutorial sul linguaggio 
+
 ## Come contribuire:
 Tutti possono aiutare a rendere questo sito migliore! Puoi trovarci sul [gruppo Telegram dedicato](https://t.me/nimitalia) e su [GitHub](https://github.com/nim-italia/nim-italia.github.io).
