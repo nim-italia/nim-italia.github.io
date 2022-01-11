@@ -21,7 +21,7 @@ draft: false
 - [Rosettacode:Nim](https://rosettacode.org/wiki/Category:Nim)
 - [Nim Days](https://xmonader.github.io/nimdays/)
 - [The Nimbus book](https://nimbus.guide/)
-
+- [GTK4 for Graphical User Interfaces](http://ssalewski.de/gtkprogramming.html)
 
 ## Video, canali, playlist youtube:
 
