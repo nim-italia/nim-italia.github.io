@@ -37,8 +37,11 @@ draft: false
 
 ## Sviluppatori italiani:
 
-- [Pietro](https://github.com/pietroppeter) autore di [nimib](https://pietroppeter.github.io/nimib/), con il quale ha pubblicato le sue soluzioni di [advent of code](https://pietroppeter.github.io/adventofnim/)
+- [Andrea](https://github.com/andreaferretti) specializzato in pacchetti di calcolo scientifico
 - [Davide](https://github.com/DavideGalilei), autore di [nimtesseract](https://github.com/DavideGalilei/nimtesseract) e di [nimgram](https://github.com/nimgram) con [Daniele](https://dadadani.xyz/) 
+- [Fabio](https://github.com/h3rald) autore di molte splendide librerie “minimal” e del linguaggio [min](https://h3rald.com/min/)
+- [Federico](https://github.com/FedericoCeratto) oltre a varie librerie, fornisce il servizio [nimble.directory](https://nimble.directory/) ed è advisor su questioni di sicurezza
+- [Pietro](https://github.com/pietroppeter) autore di [nimib](https://pietroppeter.github.io/nimib/), con il quale ha pubblicato le sue soluzioni di [advent of code](https://pietroppeter.github.io/adventofnim/)
 
 ## Comunità
 
