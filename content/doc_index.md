@@ -22,6 +22,7 @@ draft: false
 - [Nim Days](https://xmonader.github.io/nimdays/)
 - [The Nimbus book](https://nimbus.guide/)
 - [GTK4 for Graphical User Interfaces](http://ssalewski.de/gtkprogramming.html)
+- [SciNim Getting Started](https://scinim.github.io/getting-started/index.html)
 
 ## Video, canali, playlist youtube:
 
