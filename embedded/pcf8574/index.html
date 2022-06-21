@@ -1,210 +1,51 @@
-<!doctype html><html lang=en class="js csstransforms3d">
-<head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=generator content="Hugo 0.92.0">
-<meta name=description content>
-<meta name=author content="Nim Italia">
-<link rel=icon href=/images/favicon.png type=image/png>
-<title>PCF8574 :: Nim Italia</title>
-<link href=/css/nucleus.css?1643102312 rel=stylesheet>
-<link href=/css/fontawesome-all.min.css?1643102312 rel=stylesheet>
-<link href=/css/hybrid.css?1643102312 rel=stylesheet>
-<link href=/css/featherlight.min.css?1643102312 rel=stylesheet>
-<link href=/css/perfect-scrollbar.min.css?1643102312 rel=stylesheet>
-<link href=/css/auto-complete.css?1643102312 rel=stylesheet>
-<link href=/css/atom-one-dark-reasonable.css?1643102312 rel=stylesheet>
-<link href=/css/theme.css?1643102312 rel=stylesheet>
-<link href=/css/tabs.css?1643102312 rel=stylesheet>
-<link href=/css/hugo-theme.css?1643102312 rel=stylesheet>
-<link href=/css/theme-yellow.css?1643102312 rel=stylesheet>
-<script src=/js/jquery-3.3.1.min.js?1643102312></script>
-<style>:root #header+#content>#left>#rlblock_left{display:none!important}</style>
-</head>
-<body data-url=/embedded/pcf8574/>
-<nav id=sidebar>
-<div id=header-wrapper>
-<div id=header>
-<img src=/nimitalia.png>
-</div>
-<div class=searchbox>
-<label for=search-by><i class="fas fa-search"></i></label>
+<!doctype html><html lang=en class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.101.0"><meta name=description content><meta name=author content="Nim Italia"><link rel=icon href=/images/favicon.png type=image/png><title>PCF8574 :: Nim Italia</title><link href=/css/nucleus.css?1655818483 rel=stylesheet><link href=/css/fontawesome-all.min.css?1655818483 rel=stylesheet><link href=/css/hybrid.css?1655818483 rel=stylesheet><link href=/css/featherlight.min.css?1655818483 rel=stylesheet><link href=/css/perfect-scrollbar.min.css?1655818483 rel=stylesheet><link href=/css/auto-complete.css?1655818483 rel=stylesheet><link href=/css/atom-one-dark-reasonable.css?1655818483 rel=stylesheet><link href=/css/theme.css?1655818483 rel=stylesheet><link href=/css/tabs.css?1655818483 rel=stylesheet><link href=/css/hugo-theme.css?1655818483 rel=stylesheet><link href=/css/theme-yellow.css?1655818483 rel=stylesheet><script src=/js/jquery-3.3.1.min.js?1655818483></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style></head><body data-url=/embedded/pcf8574/><nav id=sidebar><div id=header-wrapper><div id=header><img src=/nimitalia.png></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
 <input data-search-input id=search-by type=search placeholder=Search...>
-<span data-search-clear><i class="fas fa-times"></i></span>
-</div>
-<script type=text/javascript src=/js/lunr.min.js?1643102312></script>
-<script type=text/javascript src=/js/auto-complete.js?1643102312></script>
-<script type=text/javascript>var baseurl="https://nim-italia.github.io/"</script>
-<script type=text/javascript src=/js/search.js?1643102312></script>
-</div>
-<section id=homelinks>
-<ul>
-<li>
-<a class=padding href=/><i class="fas fa-home"></i> Home</a>
-</li>
-</ul>
-</section>
-<div class=highlightable>
-<ul class=topics>
-<li data-nav-id=/embedded/ title=Embedded class="dd-item
-parent">
-<a href=/embedded/>
-Embedded
-</a>
-<ul>
-<li data-nav-id=/embedded/pcf8574/ title=PCF8574 class="dd-item active">
-<a href=/embedded/pcf8574/>
-PCF8574
-</a>
-</li>
-<li data-nav-id=/embedded/raspberryrp2040/ title="Raspberry Pico RP2040" class=dd-item>
-<a href=/embedded/raspberryrp2040/>
-Raspberry Pico RP2040
-</a>
-</li>
-<li data-nav-id=/embedded/display1602/ title=Display1602 class=dd-item>
-<a href=/embedded/display1602/>
-Display1602
-</a>
-</li>
-</ul>
-</li>
-<li data-nav-id=/guide/ title=Guide class=dd-item>
-<a href=/guide/>
-Guide
-</a>
-<ul>
-<li data-nav-id=/guide/strutture-dati-e-puntatori/ title="Alias, Strutture Dati, Puntatori e Riferimenti" class=dd-item>
-<a href=/guide/strutture-dati-e-puntatori/>
-Alias, Strutture Dati, Puntatori e Riferimenti
-</a>
-</li>
-<li data-nav-id=/guide/array_sequenze/ title="Array e Sequenze" class=dd-item>
-<a href=/guide/array_sequenze/>
-Array e Sequenze
-</a>
-</li>
-<li data-nav-id=/guide/div_by_zero/ title="dividere per zero in Nim" class=dd-item>
-<a href=/guide/div_by_zero/>
-dividere per zero in Nim
-</a>
-</li>
-<li data-nav-id=/guide/funzioni/ title=Funzioni class=dd-item>
-<a href=/guide/funzioni/>
-Funzioni
-</a>
-</li>
-<li data-nav-id=/guide/var_let_const/ title="var, let e const" class=dd-item>
-<a href=/guide/var_let_const/>
-var, let e const
-</a>
-</li>
-</ul>
-</li>
-</ul>
-<section id=footer>
-<p>Built with <a href=https://github.com/matcornic/hugo-theme-learn><i class="fas fa-heart"></i></a> from <a href=https://getgrav.org>Grav</a> and <a href=https://gohugo.io/>Hugo</a></p>
-</section>
-</div>
-</nav>
-<section id=body>
-<div id=overlay></div>
-<div class="padding highlightable">
-<div>
-<div id=top-bar>
-<div id=top-github-link>
-<a class=github-link title="Edit this page" href=https://github.com/nim-italia/nim-italia.github.io/edit/main/content/Embedded/pcf8574.md target=blank>
-<i class="fas fa-code-branch"></i>
-<span id=top-github-link-text>Edit this page</span>
-</a>
-</div>
-<div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb>
-<span id=sidebar-toggle-span>
-<a href=# id=sidebar-toggle data-sidebar-toggle>
-<i class="fas fa-bars"></i>
-</a>
-</span>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=/js/lunr.min.js?1655818483></script>
+<script type=text/javascript src=/js/auto-complete.js?1655818483></script>
+<script type=text/javascript>var baseurl="https://nim-italia.github.io/"</script><script type=text/javascript src=/js/search.js?1655818483></script></div><section id=homelinks><ul><li><a class=padding href=/><i class='fas fa-home'></i> Home</a></li></ul></section><div class=highlightable><ul class=topics><li data-nav-id=/embedded/ title=Embedded class="dd-item
+parent"><a href=/embedded/>Embedded</a><ul><li data-nav-id=/embedded/pcf8574/ title=PCF8574 class="dd-item active"><a href=/embedded/pcf8574/>PCF8574</a></li><li data-nav-id=/embedded/raspberryrp2040/ title="Raspberry Pico RP2040" class=dd-item><a href=/embedded/raspberryrp2040/>Raspberry Pico RP2040</a></li><li data-nav-id=/embedded/ad5245/ title=Ad5245 class=dd-item><a href=/embedded/ad5245/>Ad5245</a></li><li data-nav-id=/embedded/display1602/ title=Display1602 class=dd-item><a href=/embedded/display1602/>Display1602</a></li></ul></li><li data-nav-id=/guide/ title=Guide class=dd-item><a href=/guide/>Guide</a><ul><li data-nav-id=/guide/strutture-dati-e-puntatori/ title="Alias, Strutture Dati, Puntatori e Riferimenti" class=dd-item><a href=/guide/strutture-dati-e-puntatori/>Alias, Strutture Dati, Puntatori e Riferimenti</a></li><li data-nav-id=/guide/array_sequenze/ title="Array e Sequenze" class=dd-item><a href=/guide/array_sequenze/>Array e Sequenze</a></li><li data-nav-id=/guide/div_by_zero/ title="dividere per zero in Nim" class=dd-item><a href=/guide/div_by_zero/>dividere per zero in Nim</a></li><li data-nav-id=/guide/funzioni/ title=Funzioni class=dd-item><a href=/guide/funzioni/>Funzioni</a></li><li data-nav-id=/guide/var_let_const/ title="var, let e const" class=dd-item><a href=/guide/var_let_const/>var, let e const</a></li></ul></li></ul><section id=footer><p>Built with <a href=https://github.com/matcornic/hugo-theme-learn><i class="fas fa-heart"></i></a> from <a href=https://getgrav.org>Grav</a> and <a href=https://gohugo.io/>Hugo</a></p></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=top-github-link><a class=github-link title='Edit this page' href=https://github.com/nim-italia/nim-italia.github.io/edit/main/content/Embedded/pcf8574.md target=blank><i class="fas fa-code-branch"></i>
+<span id=top-github-link-text>Edit this page</span></a></div><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i></a></span>
 <span id=toc-menu><i class="fas fa-list-alt"></i></span>
-<span class=links>
-<a href=/>Home</a> > <a href=/embedded/>Embedded</a> > PCF8574
-</span>
-</div>
-<div class=progress>
-<div class=wrapper>
-<nav id=TableOfContents></nav>
-</div>
-</div>
-</div>
-</div>
-<div id=head-tags>
-</div>
-<div id=body-inner>
-<h1>
-PCF8574
-</h1>
-<p><em><strong>Scritto da <a href=https://sites.google.com/view/martinix/home>Andrea Martin</a></strong></em></p>
-<p>In questo articolo parlerò un pò del PCF8574, ma a cosa fa capo questa strana sigla? il PCF8574 è integrato I/O expander quasi-biderezionale a 8 bit indirizzabile sul bus I2c. Il nostro Raspbery Pico ha molti pin utilizzabili come ingressi o uscite digitali, ma possono esaurirsi veramente in fretta se il nostro progetto ne richiede molti, per non parlare se poi dovessimo utilizzare un display. Allora ecco che questo piccolo ma utile componente ci da la possibilità di avere molti più pin disponibili, sia in ingresso che in uscita. Se hai notato prima ho scritto &ldquo;quasi-bidirezionale&rdquo;, sta a significare che si lui può operare in come uscita o come ingresso, ma non entrambe le cose, in altre parole, o lo si usa sempre come input o sempre come output per tutti i bit. Il suo uso di base è molto semplce, si manda un byte sulla i2c e lui lo ripopone sulle sue uscite in maniera trasparente.</p>
-<p><a href=https://www.ti.com/lit/ds/symlink/pcf8574.pdf>https://www.ti.com/lit/ds/symlink/pcf8574.pdf</a></p>
-<p>esempio:
-mando su I2c il byte 10101010 (0xaa) &ndash;> sul pcf avro p7=1, p6=0, p5=1&mldr; p0=0</p>
-<p>Fio a qui nulla di complicato, si complica un pò quando uno vorrebbe scrivre o leggere un solo bit, magari per accendere un led, ecco che allora bisogna cominciare a &ldquo;giocare&rdquo; con i bit e le maschere, ma niente paura ho sviluppato una libreria ovviamente in Nim che si prende lei in carico il lavoro noioso e a te non resta altro che dire quale bit leggere o scrivere in maniera molto semplice; ecco un esempio:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=color:#f92672>import</span> pcf8574
-stdioInitAll()
-<span style=color:#66d9ef>let</span> exp1 <span style=color:#f92672>=</span> Pcf8574(addressDevice: <span style=color:#ae81ff>0x20</span>, blockk: i2c1)<span style=color:#75715e># buffer: 0x00 initializes the object if necessary</span>
-<span style=color:#66d9ef>const</span> sda <span style=color:#f92672>=</span> <span style=color:#ae81ff>2.</span>Gpio 
-<span style=color:#66d9ef>const</span> scl <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.</span>Gpio 
-<span style=color:#66d9ef>const</span> address <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x20</span>
-init(i2c1,<span style=color:#ae81ff>10000</span>)
-sda.setFunction(I2C); sda.pullUp()
-scl.setFunction(I2C); scl.pullUp()
-
-  <span style=color:#66d9ef>while</span> <span style=color:#66d9ef>true</span>:
-    exp1.setHigh() <span style=color:#75715e>#set all led on</span>
-    sleep(<span style=color:#ae81ff>1000</span>)
-    exp1.digitWrite(p1, on) <span style=color:#75715e>#turn on the bit &#34;p1&#34; </span>
-    sleep(<span style=color:#ae81ff>1000</span>)
-    exp1.digitWrite(p4, on) <span style=color:#75715e>#turn on the bit &#34;p4&#34; </span>
-    sleep(<span style=color:#ae81ff>1000</span>)
-    exp1.digitWrite(p1, off) <span style=color:#75715e>#turn off the bit &#34;p1&#34; </span>
-    sleep(<span style=color:#ae81ff>1000</span>)
-    exp1.digitWrite(p4, off) <span style=color:#75715e>#turn off the bit &#34;p4&#34; ]#</span>
-    sleep(<span style=color:#ae81ff>1000</span>)
-    exp1.writeBytex(<span style=color:#ae81ff>0xaa</span>) <span style=color:#75715e>#alternating leds </span>
-    sleep(<span style=color:#ae81ff>1000</span>)
-    exp1.setLow() <span style=color:#75715e>#set all led off</span>
-    sleep(<span style=color:#ae81ff>1000</span>)</code></pre></div>
-<p>Come detto prima questo componente è (quasi)bidirezionale, quindi possiamo anche andare a leggere il byte presente sui pin dell&rsquo;integrato e si può fare come nell&rsquo;esempio sotto(scrivero solo il pezzo dentro al while:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=color:#66d9ef>while</span> <span style=color:#66d9ef>true</span>:
-    <span style=color:#66d9ef>var</span> lettura <span style=color:#f92672>=</span> <span style=color:#f92672>[</span>uint8(<span style=color:#ae81ff>0</span>)<span style=color:#f92672>]</span> <span style=color:#75715e>#create a variable uint8 = 0</span>
-    exp1.readBytex(lettura) <span style=color:#75715e>#read all byte on device </span>
-    print(<span style=color:#e6db74>&#34;Leggo sul expander: &#34;</span> <span style=color:#f92672>&amp;</span> <span style=color:#f92672>$</span>lettura<span style=color:#f92672>[</span><span style=color:#ae81ff>0</span><span style=color:#f92672>]</span>) <span style=color:#75715e>#stampa tutto il byte</span>
-    <span style=color:#66d9ef>var</span> p3val <span style=color:#f92672>=</span> exp1.digitRead(p3) <span style=color:#75715e>#assigns p3val only the value of bit p3 (bool) </span>
-    print(<span style=color:#e6db74>&#34;P3= &#34;</span> <span style=color:#f92672>&amp;</span> <span style=color:#f92672>$</span>p3val) <span style=color:#75715e>#prints the value of bit p3</span></code></pre></div>
-<p>Ora che si può conoscere lo stato di quel singolo bit, si può per esempio collegaci un pulsante o un qualche sensore on/off, poi compito del programmatore vedre che farne.
+<span class=links><a href=/>Home</a> > <a href=/embedded/>Embedded</a> > PCF8574</span></div><div class=progress><div class=wrapper><nav id=TableOfContents></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>PCF8574</h1><p><em><strong>Scritto da <a href=https://sites.google.com/view/martinix/home>Andrea Martin</a></strong></em></p><p>In questo articolo parlerò un pò del PCF8574, ma a cosa fa capo questa strana sigla? il PCF8574 è integrato I/O expander quasi-biderezionale a 8 bit indirizzabile sul bus I2c. Il nostro Raspbery Pico ha molti pin utilizzabili come ingressi o uscite digitali, ma possono esaurirsi veramente in fretta se il nostro progetto ne richiede molti, per non parlare se poi dovessimo utilizzare un display. Allora ecco che questo piccolo ma utile componente ci da la possibilità di avere molti più pin disponibili, sia in ingresso che in uscita. Se hai notato prima ho scritto &ldquo;quasi-bidirezionale&rdquo;, sta a significare che si lui può operare in come uscita o come ingresso, ma non entrambe le cose, in altre parole, o lo si usa sempre come input o sempre come output per tutti i bit. Il suo uso di base è molto semplce, si manda un byte sulla i2c e lui lo ripopone sulle sue uscite in maniera trasparente.</p><p><a href=https://www.ti.com/lit/ds/symlink/pcf8574.pdf>https://www.ti.com/lit/ds/symlink/pcf8574.pdf</a></p><p>esempio:
+mando su I2c il byte 10101010 (0xaa) &ndash;> sul pcf avro p7=1, p6=0, p5=1&mldr; p0=0</p><p>Fio a qui nulla di complicato, si complica un pò quando uno vorrebbe scrivre o leggere un solo bit, magari per accendere un led, ecco che allora bisogna cominciare a &ldquo;giocare&rdquo; con i bit e le maschere, ma niente paura ho sviluppato una libreria ovviamente in Nim che si prende lei in carico il lavoro noioso e a te non resta altro che dire quale bit leggere o scrivere in maniera molto semplice; ecco un esempio:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=display:flex><span><span style=color:#f92672>import</span> pcf8574
+</span></span><span style=display:flex><span>stdioInitAll()
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> exp1 <span style=color:#f92672>=</span> Pcf8574(addressDevice: <span style=color:#ae81ff>0x20</span>, blockk: i2c1)<span style=color:#75715e># buffer: 0x00 initializes the object if necessary</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> sda <span style=color:#f92672>=</span> <span style=color:#ae81ff>2.</span>Gpio 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> scl <span style=color:#f92672>=</span> <span style=color:#ae81ff>3.</span>Gpio 
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> address <span style=color:#f92672>=</span> <span style=color:#ae81ff>0x20</span>
+</span></span><span style=display:flex><span>init(i2c1,<span style=color:#ae81ff>10000</span>)
+</span></span><span style=display:flex><span>sda.setFunction(I2C); sda.pullUp()
+</span></span><span style=display:flex><span>scl.setFunction(I2C); scl.pullUp()
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>while</span> <span style=color:#66d9ef>true</span>:
+</span></span><span style=display:flex><span>    exp1.setHigh() <span style=color:#75715e>#set all led on</span>
+</span></span><span style=display:flex><span>    sleep(<span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>    exp1.digitWrite(p1, on) <span style=color:#75715e>#turn on the bit &#34;p1&#34; </span>
+</span></span><span style=display:flex><span>    sleep(<span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>    exp1.digitWrite(p4, on) <span style=color:#75715e>#turn on the bit &#34;p4&#34; </span>
+</span></span><span style=display:flex><span>    sleep(<span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>    exp1.digitWrite(p1, off) <span style=color:#75715e>#turn off the bit &#34;p1&#34; </span>
+</span></span><span style=display:flex><span>    sleep(<span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>    exp1.digitWrite(p4, off) <span style=color:#75715e>#turn off the bit &#34;p4&#34; ]#</span>
+</span></span><span style=display:flex><span>    sleep(<span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>    exp1.writeBytex(<span style=color:#ae81ff>0xaa</span>) <span style=color:#75715e>#alternating leds </span>
+</span></span><span style=display:flex><span>    sleep(<span style=color:#ae81ff>1000</span>)
+</span></span><span style=display:flex><span>    exp1.setLow() <span style=color:#75715e>#set all led off</span>
+</span></span><span style=display:flex><span>    sleep(<span style=color:#ae81ff>1000</span>)</span></span></code></pre></div><p>Come detto prima questo componente è (quasi)bidirezionale, quindi possiamo anche andare a leggere il byte presente sui pin dell&rsquo;integrato e si può fare come nell&rsquo;esempio sotto(scrivero solo il pezzo dentro al while:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nim data-lang=nim><span style=display:flex><span><span style=color:#66d9ef>while</span> <span style=color:#66d9ef>true</span>:
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> lettura <span style=color:#f92672>=</span> <span style=color:#f92672>[</span>uint8(<span style=color:#ae81ff>0</span>)<span style=color:#f92672>]</span> <span style=color:#75715e>#create a variable uint8 = 0</span>
+</span></span><span style=display:flex><span>    exp1.readBytex(lettura) <span style=color:#75715e>#read all byte on device </span>
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;Leggo sul expander: &#34;</span> <span style=color:#f92672>&amp;</span> <span style=color:#f92672>$</span>lettura<span style=color:#f92672>[</span><span style=color:#ae81ff>0</span><span style=color:#f92672>]</span>) <span style=color:#75715e>#stampa tutto il byte</span>
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>var</span> p3val <span style=color:#f92672>=</span> exp1.digitRead(p3) <span style=color:#75715e>#assigns p3val only the value of bit p3 (bool) </span>
+</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#34;P3= &#34;</span> <span style=color:#f92672>&amp;</span> <span style=color:#f92672>$</span>p3val) <span style=color:#75715e>#prints the value of bit p3</span></span></span></code></pre></div><p>Ora che si può conoscere lo stato di quel singolo bit, si può per esempio collegaci un pulsante o un qualche sensore on/off, poi compito del programmatore vedre che farne.
 Si la sintassi di configurazione di I2c è un pò macchinosa, ma nel caso accettino il commit fatto per semplificarla provvederò ad aggiornare.
-Come di consueto la libreria si pò trovare in:</p>
-<p><a href=https://github.com/Martinix75/Raspberry_Pico>https://github.com/Martinix75/Raspberry_Pico</a></p>
-<footer class=footline>
-</footer>
-</div>
-</div>
-<div id=navigation>
-</div>
-</section>
-<div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px>
-<div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div>
-</div>
-<script src=/js/clipboard.min.js?1643102312></script>
-<script src=/js/perfect-scrollbar.min.js?1643102312></script>
-<script src=/js/perfect-scrollbar.jquery.min.js?1643102312></script>
-<script src=/js/jquery.sticky.js?1643102312></script>
-<script src=/js/featherlight.min.js?1643102312></script>
-<script src=/js/highlight.pack.js?1643102312></script>
-<script>hljs.initHighlightingOnLoad()</script>
-<script src=/js/modernizr.custom-3.6.0.js?1643102312></script>
-<script src=/js/learn.js?1643102312></script>
-<script src=/js/hugo-learn.js?1643102312></script>
-<script src=/mermaid/mermaid.js?1643102312></script>
-<script>mermaid.initialize({startOnLoad:!0})</script>
-</body>
-</html>
+Come di consueto la libreria si pò trovare in:</p><p><a href=https://github.com/Martinix75/Raspberry_Pico>https://github.com/Martinix75/Raspberry_Pico</a></p><footer class=footline></footer></div></div><div id=navigation></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/js/clipboard.min.js?1655818483></script>
+<script src=/js/perfect-scrollbar.min.js?1655818483></script>
+<script src=/js/perfect-scrollbar.jquery.min.js?1655818483></script>
+<script src=/js/jquery.sticky.js?1655818483></script>
+<script src=/js/featherlight.min.js?1655818483></script>
+<script src=/js/highlight.pack.js?1655818483></script>
+<script>hljs.initHighlightingOnLoad()</script><script src=/js/modernizr.custom-3.6.0.js?1655818483></script>
+<script src=/js/learn.js?1655818483></script>
+<script src=/js/hugo-learn.js?1655818483></script>
+<script src=/mermaid/mermaid.js?1655818483></script>
+<script>mermaid.initialize({startOnLoad:!0})</script></body></html>
