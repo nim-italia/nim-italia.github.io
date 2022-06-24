@@ -23,6 +23,7 @@ Questa è una documentazione creata da parte della community per aiutare svilupp
 - [strutture dati e puntatori]({{< ref "/Guide/strutture-dati-e-puntatori" >}})
 - [var, let e const]({{< ref "/Guide/var_let_const" >}})
 - [Ad5245 potenziometro digitale]({{< ref "/Embedded/Ad5245" >}})
+- [Nim manualino]({{< ref "/Guide/manualino_nim" >}})
 
 ## Link alla documentazione:
 - [Questa pagina]({{< ref "doc_index" >}}) contiene vari link a documentazione e tutorial sul linguaggio 
