@@ -101,6 +101,7 @@ Nella prossima parte vedremo come rendere modulare lo sviluppo sfruttando la pos
 
 ### link per approfondimenti
 
+- [Blog post originale](https://nim-lang.org/araq/karax.html)
 - [Karax Intro](https://github.com/karaxnim/karax/blob/master/guide/Introduction.md)
 - [Exploring Karax](https://moigagoo.svbtle.com/exploring-karax)
 - [Using Nim for Web Development in 2021](https://arhamjain.com/2021/11/22/nim-webdev.html)
