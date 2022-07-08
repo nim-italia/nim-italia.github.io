@@ -6,7 +6,8 @@ draft: false
 
 ### introduzione
 
-[Karax](https://github.com/karaxnim/karax) è un web framework che sfrutta il target *javascript* di Nim e un po' come i software più famosi come React, Vue o Angular, ci permette di creare SPA (Single Page Applications) con il nostro linguaggio preferito, programmando quindi applicazioni web direttamente in Nim. Se utilizzata in accoppiata con un framework backend, ad esempio [Jester](https://github.com/dom96/jester) o [Prologue](https://github.com/planety/prologue) possiamo gestire un completo full-stack per lo sviluppo web sempre usando lo stesso linguaggio.
+[Karax](https://github.com/karaxnim/karax) è un web framework che sfrutta il target *javascript* di Nim e un po' come i software più famosi come React, Vue o Angular, ci permette di creare SPA (Single Page Applications) con il nostro linguaggio preferito, programmando quindi applicazioni web direttamente in Nim. La peculiarità di queste applicazioni è che vengono eseguite totalmente lato browser, per cui possono essere servite da un semplice file HTML statico.
+Se invece utilizziamo Nim lato server, ad esempio in accoppiata con un framework backend, ad esempio [Jester](https://github.com/dom96/jester) o [Prologue](https://github.com/planety/prologue) possiamo gestire un completo full-stack per lo sviluppo web sempre usando lo stesso linguaggio.
 
 Il [Nim Playground](https://play.nim-lang.org/) e il [Nim Forum](https://forum.nim-lang.org/) ad esempio sono scritti completamente in Nim.
 
