@@ -57,7 +57,7 @@ setRenderer createDom
 
 ### eventi ed interazioni
 
-Una SPA necessita di essere interattiva, reagendo agli input dell'utente senza dover contattare il server e ricaricare tutto quanto ma solamente gli elementi che vengono modificati; Karax implementa un Virtual Dom per tenere traccia di cosa va ridisegnato. Come in javacript, possiamo associare codice da eseguire al verificarsi di un evento.
+Una SPA necessita di essere interattiva, reagendo agli input dell'utente senza dover contattare il server e ricaricare tutto quanto ma solamente gli elementi che vengono modificati; Karax implementa un Virtual Dom per tenere traccia di cosa va ridisegnato. Come in javascript, possiamo associare codice da eseguire al verificarsi di un evento.
 
 {{< highlight nim >}}
 include karax/prelude
@@ -78,7 +78,7 @@ setRenderer createDom
 
 ### input utente
 
-In questo esempio vediamo l'utilizzo del tipo *kstring* ; quando si compila con target js, è sinonimo di *cstring*, mentre con target nativo diventa *string*
+In questo esempio vediamo l'utilizzo del tipo *kstring* ; quando si compila con target js, è sinonimo di *cstring*, mentre con target nativo diventa *string*. Questo accorgimento è necessario perchè nei due linguaggi [i tipi stringa sono diversi](https://ssalewski.de/nimprogramming.html#_strings)
 
 {{< highlight nim >}}
 include karax/prelude
@@ -106,12 +106,3 @@ Nella prossima parte vedremo come rendere modulare lo sviluppo sfruttando la pos
 - [Karax Intro](https://github.com/karaxnim/karax/blob/master/guide/Introduction.md)
 - [Exploring Karax](https://moigagoo.svbtle.com/exploring-karax)
 - [Using Nim for Web Development in 2021](https://arhamjain.com/2021/11/22/nim-webdev.html)
-
-
-
-
-
-
-
-
-
