@@ -36,6 +36,9 @@ draft: false
 - [Curated Packages](https://github.com/nim-lang/Nim/wiki/Curated-Packages)
 - [Awesome Nim](https://github.com/xflywind/awesome-nim)
 
+## Blog e siti che parlano di Nim
+- [Peter's DevLog](https://peterme.net/)
+
 ## Sviluppatori italiani:
 
 - [Andrea](https://github.com/andreaferretti) specializzato in pacchetti di calcolo scientifico
