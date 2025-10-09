@@ -1,5 +1,5 @@
 baseURL = 'https://nim-italia.github.io/'
-theme = "hugo-theme-learn"
+theme = "hugo-theme-relearn"
 languageCode = 'it-it'
 title = 'Nim Italia'
 description = "Documentazione italiana del linguaggio di programmazione Nim"
