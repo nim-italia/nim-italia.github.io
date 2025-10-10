@@ -6,7 +6,9 @@ description = "Documentazione italiana del linguaggio di programmazione Nim"
 
 staticDir = ['static']
 [params]
- themeVariant = "yellow"
- disableNextPrev = true
- author = "Nim Italia"
- editURL = "https://github.com/nim-italia/nim-italia.github.io/edit/main/content/"
+themeVariant = ['zen-dark', 'zen-light']
+disableNextPrev = true
+editURL = "https://github.com/nim-italia/nim-italia.github.io/edit/main/content/"
+  [params.author]
+    name = "Nim Italia"
+
