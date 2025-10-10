@@ -26,7 +26,7 @@ Questa è una documentazione creata da parte della community per aiutare svilupp
 - [Nim manualino]({{< ref "/Guide/manualino_nim" >}})
 
 ## Link alla documentazione:
-- [Questa pagina]({{< ref "doc_index" >}}) contiene vari link a documentazione e tutorial sul linguaggio 
+- [Questa pagina]({{% ref "doc_index" %}}) contiene vari link a documentazione e tutorial sul linguaggio 
 
 ## Come contribuire:
 Tutti possono aiutare a rendere questo sito migliore! Puoi trovarci sul [gruppo Telegram dedicato](https://t.me/nimitalia) e su [GitHub](https://github.com/nim-italia/nim-italia.github.io).
