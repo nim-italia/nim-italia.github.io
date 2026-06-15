@@ -1,6 +1,6 @@
 ---
 title: "Documentazione su Nim"
-date: 2022-01-11T14:59:32+02:00
+date: 2026-06-15T08:29:32+02:00
 draft: false
 ---
 
@@ -13,6 +13,7 @@ draft: false
 - [Nim by Example](https://nim-by-example.github.io/)
 - [Nim basics](https://narimiran.github.io/nim-basics/)
 - [Learn X in Y minutes](https://learnxinyminutes.com/docs/nim/)
+- [Exercism.io](https://exercism.io/my/tracks/nim)
 
 ### Livello medio/avanzato:
 
@@ -30,6 +31,12 @@ draft: false
 - [Kiloneie - Nim for beginners](https://www.youtube.com/user/kiloneie/featured)
 - [Building a PlayStation emulator from scratch](https://www.youtube.com/watch?v=d0DeS4tkCaI&list=PLsy98XYocZu3yuYL5GtsXxy7erdvFz0TK)
 - [Nim Programming Tutorials](https://www.youtube.com/playlist?list=PLvxZJTnSXMLrCF9lXyg8D5kxTlXjwPsHE)
+
+## Libri:
+- [Nim in Action](https://book.picheta.me/)
+- [Mastering Nim](https://www.amazon.com/Mastering-Nim-complete-programming-language/dp/B0B4R7B9YX)
+- [Numerical algorithms in nim](https://www.amazon.com/dp/B0H3YRZY65) [link pdf](https://github.com/mdipierro/nlib-nim/blob/master/book/book_numerical_published_2026-05-30.pdf)
+- 
 
 ## Selezioni di librerie e progetti: 
 
