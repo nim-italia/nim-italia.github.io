@@ -36,7 +36,6 @@ draft: false
 - [Nim in Action](https://book.picheta.me/)
 - [Mastering Nim](https://www.amazon.com/Mastering-Nim-complete-programming-language/dp/B0B4R7B9YX)
 - [Numerical algorithms in nim](https://www.amazon.com/dp/B0H3YRZY65) [link pdf](https://github.com/mdipierro/nlib-nim/blob/master/book/book_numerical_published_2026-05-30.pdf)
-- 
 
 ## Selezioni di librerie e progetti: 
 
