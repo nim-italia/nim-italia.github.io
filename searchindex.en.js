@@ -8,6 +8,14 @@ var relearn_searchindex = [
     "uri": "/doc_index/index.html"
   },
   {
+    "breadcrumb": "",
+    "content": "Ciao ITALIANim! when isMainModule: echo \"Benvenuti!\" Questa è una documentazione creata da parte della community per aiutare sviluppatori a comprendere il linguaggio di programmazione Nim completamente in italiano.\nUltimi articoli pubblicati: Array e Sequenze pilotare il display 1602 via I2c dividere per zero: verso l’infinito ed oltre pcf8574 Raspberry Pico introduzione alle funzioni strutture dati e puntatori var, let e const Ad5245 potenziometro digitale Nim manualino Link alla documentazione: Questa pagina contiene vari link a documentazione e tutorial sul linguaggio Come contribuire: Tutti possono aiutare a rendere questo sito migliore! Puoi trovarci sul gruppo Telegram dedicato e su GitHub.",
+    "description": "Ciao ITALIANim! when isMainModule: echo \"Benvenuti!\" Questa è una documentazione creata da parte della community per aiutare sviluppatori a comprendere il linguaggio di programmazione Nim completamente in italiano.\nUltimi articoli pubblicati: Array e Sequenze pilotare il display 1602 via I2c dividere per zero: verso l’infinito ed oltre pcf8574 Raspberry Pico introduzione alle funzioni strutture dati e puntatori var, let e const Ad5245 potenziometro digitale Nim manualino Link alla documentazione: Questa pagina contiene vari link a documentazione e tutorial sul linguaggio Come contribuire: Tutti possono aiutare a rendere questo sito migliore! Puoi trovarci sul gruppo Telegram dedicato e su GitHub.",
+    "tags": [],
+    "title": "Home",
+    "uri": "/index.html"
+  },
+  {
     "breadcrumb": "Home",
     "content": "Qui potrai trovare alcune guide su come utilizzare Nim per sviluppare applicazioni web",
     "description": "Qui potrai trovare alcune guide su come utilizzare Nim per sviluppare applicazioni web",
@@ -38,14 +46,6 @@ var relearn_searchindex = [
     "tags": [],
     "title": "Guide",
     "uri": "/guide/index.html"
-  },
-  {
-    "breadcrumb": "",
-    "content": "Ciao ITALIANim! when isMainModule: echo \"Benvenuti!\" Questa è una documentazione creata da parte della community per aiutare sviluppatori a comprendere il linguaggio di programmazione Nim completamente in italiano.\nUltimi articoli pubblicati: Array e Sequenze pilotare il display 1602 via I2c dividere per zero: verso l’infinito ed oltre pcf8574 Raspberry Pico introduzione alle funzioni strutture dati e puntatori var, let e const Ad5245 potenziometro digitale Nim manualino Link alla documentazione: Questa pagina contiene vari link a documentazione e tutorial sul linguaggio Come contribuire: Tutti possono aiutare a rendere questo sito migliore! Puoi trovarci sul gruppo Telegram dedicato e su GitHub.",
-    "description": "Ciao ITALIANim! when isMainModule: echo \"Benvenuti!\" Questa è una documentazione creata da parte della community per aiutare sviluppatori a comprendere il linguaggio di programmazione Nim completamente in italiano.\nUltimi articoli pubblicati: Array e Sequenze pilotare il display 1602 via I2c dividere per zero: verso l’infinito ed oltre pcf8574 Raspberry Pico introduzione alle funzioni strutture dati e puntatori var, let e const Ad5245 potenziometro digitale Nim manualino Link alla documentazione: Questa pagina contiene vari link a documentazione e tutorial sul linguaggio Come contribuire: Tutti possono aiutare a rendere questo sito migliore! Puoi trovarci sul gruppo Telegram dedicato e su GitHub.",
-    "tags": [],
-    "title": "Home",
-    "uri": "/index.html"
   },
   {
     "breadcrumb": "Home \u003e Embedded",
